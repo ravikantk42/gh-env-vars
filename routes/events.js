@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   const allEvents = await db.collection('events').find().toArray();
   res.json({ events: allEvents });
 });
-
+//update event
 router.post('/', async (req, res) => {
   const eventData = req.body;
   const result = await db.collection('events').insertOne({...eventData});
